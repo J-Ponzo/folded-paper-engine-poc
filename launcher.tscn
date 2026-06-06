@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://blhxs4ydwmck2"]
+
+[ext_resource type="Script" uid="uid://4hmlst3bmv6n" path="res://addons/folded_paper_engine/FoldedPaperEngine.gd" id="1_4emaf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cvfd6"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_vcerv"]
+sky_material = SubResource("ProceduralSkyMaterial_cvfd6")
+
+[sub_resource type="Environment" id="Environment_uy6ji"]
+background_mode = 2
+sky = SubResource("Sky_vcerv")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=96748467]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1689723074]
+environment = SubResource("Environment_uy6ji")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2095834677]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="FoldedPaperEngine" type="Node3D" parent="." unique_id=1354588860 node_paths=PackedStringArray("environment")]
+script = ExtResource("1_4emaf")
+path = "uid://d11rjerur5upd"
+environment = NodePath("../WorldEnvironment")
+metadata/_custom_type_script = "uid://4hmlst3bmv6n"

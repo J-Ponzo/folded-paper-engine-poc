@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="folded-paper-engine-poc"
+run/main_scene="uid://blhxs4ydwmck2"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/folded_paper_engine/plugin.cfg")
 
 [physics]
 
